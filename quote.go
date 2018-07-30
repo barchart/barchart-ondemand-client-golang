@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// Quote https://www.barchart.com/ondemand/api/getQuote
 type Quote struct {
 	Results []struct {
 		Symbol                 string      `json:"symbol"`
@@ -76,8 +77,7 @@ type Quote struct {
 	} `json:"results"`
 }
 
-//
-
+// Quote https://www.barchart.com/ondemand/api/getQuote
 func (od *OnDemand) Quote(symbols []string, fields []string) (Quote, error) {
 	quote := Quote{}
 

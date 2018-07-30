@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// Profile https://www.barchart.com/ondemand/api/getProfile
 type Profile struct {
 	Results []struct {
 		Symbol               string   `json:"symbol"`
@@ -39,10 +40,10 @@ type Profile struct {
 	}
 }
 
-//
-
+// Profile an instrument profile: https://www.barchart.com/ondemand/api/getProfile
 func (od *OnDemand) Profile(symbols []string, fields []string) (Profile, error) {
 	profile := Profile{}
+
 	_symbols := strings.ToUpper(strings.Join(symbols, ","))
 	_fields := ""
 

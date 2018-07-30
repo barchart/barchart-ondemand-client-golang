@@ -28,7 +28,7 @@ func (od *OnDemand) Request(api string, params string, result interface{}) ([]by
 	ep := fmt.Sprintf("%v%v?apikey=%v&%v", od.BaseURL, api, od.APIKey, params)
 
 	if od.Debug == true {
-		fmt.Printf("Going After: %v", ep)
+		fmt.Printf("Going After: %v\n", ep)
 	}
 
 	body, err := od.get(ep)

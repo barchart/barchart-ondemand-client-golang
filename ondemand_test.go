@@ -8,7 +8,7 @@ import (
 )
 
 var key = os.Getenv("ONDEMAND_KEY")
-var od = New(key, false)
+var od = New(key, true)
 
 func TestInit(t *testing.T) {
 
@@ -48,4 +48,14 @@ func TestInit(t *testing.T) {
 	}
 
 	fmt.Println(news.Results[0].Headline)
+
+	// get grain bids
+	//
+	bids, _ := od.GrainBids("Heartland Coop", []string{"county", "fips_code"}, true, true)
+	fmt.Println("Bids", bids.Results[0].Bids[0].Basis)
+
+	// get grain instruments
+	//
+	insts, _ := od.GrainInstruments("instrumentType=bidBasis&instrumentRoot=ZC&zipCode=50152&deliveryMonth=201812")
+	fmt.Println("Grain Insts", insts)
 }

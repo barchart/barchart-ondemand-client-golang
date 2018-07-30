@@ -23,7 +23,15 @@ quote, err := ondemand.Quote([]string{"AAPL", "EXC"}, []string{"bid", "ask"})
 if err != nil {
     fmt.Sprintf("Symbol: %v Last: %v", q.Symbol, q.LastPrice)
 }
+```
 
+### Generic API call by name
+
+```go
+var result interface{}
+ondemand.Request("getQuote.json", "symbols=AAPL", &result)
+
+fmt.Println("Result:", result)
 ```
 
 ### Get AP News Headlines for Apple

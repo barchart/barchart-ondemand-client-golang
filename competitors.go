@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// Competitors https://www.barchart.com/ondemand/api/getCompetitors
 type Competitors struct {
 	Results []struct {
 		Symbol             string  `json:"symbol"`
@@ -17,8 +18,7 @@ type Competitors struct {
 	}
 }
 
-//
-
+// Competitors https://www.barchart.com/ondemand/api/getCompetitors
 func (od *OnDemand) Competitors(symbol string, fields []string) (Competitors, error) {
 	competitors := Competitors{}
 

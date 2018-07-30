@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// Headline https://www.barchart.com/ondemand/api/getNews
 type Headline struct {
 	Results []struct {
 		NewsID        int         `json:"newsID"`
@@ -21,6 +22,7 @@ type Headline struct {
 	}
 }
 
+// News https://www.barchart.com/ondemand/api/getNews
 func (od *OnDemand) News(displayType string, sources []string, symbols []string) (Headline, error) {
 	headline := Headline{}
 
