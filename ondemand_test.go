@@ -58,4 +58,9 @@ func TestInit(t *testing.T) {
 	//
 	insts, _ := od.GrainInstruments("instrumentType=bidBasis&instrumentRoot=ZC&zipCode=50152&deliveryMonth=201812")
 	fmt.Println("Grain Insts", insts)
+
+	// get financial highlights
+	//
+	fh, _ := od.FinancialHighlights([]string{"GE", "TSLA"}, []string{"beta"})
+	fmt.Println("Financial Highlights", fh)
 }
